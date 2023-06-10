@@ -539,6 +539,7 @@
               <thead>
                 <tr>
                   <th data-i18n="saving-throws">Saving Throws</th>
+                  <th data-i18n="gm">GM</th>
                   <th data-i18n="total">Total</th>
                   <th></th>
                   <th data-i18n="base-save">Base Save</th>
@@ -561,6 +562,10 @@
                             <div class="abilityName" data-i18n="constitution">Constitution</div>
                             <button type="roll" value="&amp;{template:pf} {{charName=@{character_name}}} {{attr=fort}} {{result=[[1d20 + @{fort}]]}}{{isNotAttack=true}}{{notes=@{fort_notes}}}"></button>
                           </div>
+                        </td>
+                        <td>
+                          <span data-i18n="gm-roll-b"></span>
+                          <button type="roll" value="/w gm &amp;{template:pf} {{charName=@{character_name}}} {{attr=fort}} {{result=[[1d20 + @{fort}]]}}{{isNotAttack=true}}{{notes=@{fort_notes}}}"></button>
                         </td>
                         <td>
                           <div class="readOnlyBox"><span name="attr_fort"></span></div>
@@ -631,6 +636,10 @@
                           </div>
                         </td>
                         <td>
+                          <span data-i18n="gm-roll-b"></span>
+                          <button type="roll" value="/w gm &amp;{template:pf} {{charName=@{character_name}}} {{attr=ref}} {{result=[[1d20 + @{ref}]]}}{{isNotAttack=true}}{{notes=@{ref_notes}}}"></button>
+                        </td>
+                        <td>
                           <div class="readOnlyBox"><span name="attr_ref"></span></div>
                           <input type="hidden" name="attr_ref"/>
                         </td>
@@ -697,6 +706,10 @@
                             <div class="abilityName" data-i18n="wisdom">Wisdom</div>
                             <button type="roll" value="&amp;{template:pf} {{charName=@{character_name}}} {{attr=will}} {{result=[[1d20 + @{will}]]}}{{isNotAttack=true}}{{notes=@{will_notes}}}"></button>
                           </div>
+                        </td>
+                        <td>
+                          <span data-i18n="gm-roll-b"></span>
+                          <button type="roll" value="/w gm &amp;{template:pf} {{charName=@{character_name}}} {{attr=will}} {{result=[[1d20 + @{will}]]}}{{isNotAttack=true}}{{notes=@{will_notes}}}"></button>
                         </td>
                         <td>
                           <div class="readOnlyBox"><span name="attr_will"></span></div>

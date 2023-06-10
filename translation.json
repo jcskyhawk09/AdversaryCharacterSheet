@@ -215,5 +215,6 @@
 	"non-crit-damage-tpl": "Non-crit Damage $[[1]]",
 	"result-tpl": "Result $[[0]]",
 	"notes-tpl": "Notes:",
-	"attack-notes-tpl": "Attack Notes:"
+	"attack-notes-tpl": "Attack Notes:",
+	"gm": "GM"
 }
