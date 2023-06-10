@@ -173,6 +173,7 @@
   height: auto;
   line-height: 18px;
   margin-bottom: 0;
+  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -199,8 +200,8 @@
 }
 .charsheet .fieldBox .inner input {
   border: none;
-  border-radius: 0
-    display: inline;
+  border-radius: 0;
+  display: inline;
   text-align: center;
 }
 .charsheet .labelledAbove {
@@ -228,7 +229,6 @@
 }
 .charsheet .labelledBoxH > .inner {
   background: #fff;
-  display: inline-block;
   float: right;
   vertical-align: middle;
 }
@@ -333,7 +333,7 @@
   width: 35%;
 }
 .charsheet .gearTab .mundaneGear .money {
-  text-align: center
+  text-align: center;
   width: 100%;
 }
 .charsheet .gearTab .mundaneGear .money .labelledBoxV input {
