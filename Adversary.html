@@ -500,6 +500,12 @@
           </div>
           <div class="inlineBlock" style="float: right">
             <div style="vertical-align: middle">
+              <div class="labelledBoxV" style="width: .6in">
+                <label data-i18n="ac-dex-max">AC Dex Max</label>
+                <div class="inner">
+                  <input type="text" name="attr_ac_dex_max" value="99"/>
+                </div>
+              </div>
               <div class="labelledBoxV" style="width: 1in">
                 <label data-i18n="damage-reduction">Damage Reduction</label>
                 <div class="inner">
@@ -514,18 +520,18 @@
               </div>
               <div class="inlineBlock" style="vertical-align: top">
                 <div>
-                  <div class="labelledBoxH" style="width: 4.5in">
+                  <div class="labelledBoxH" style="width: 4in">
                     <label data-i18n="resistances">Resistances</label>
                     <div class="inner">
-                      <input type="text" name="attr_resistances" style="width: 3.4in"/>
+                      <input type="text" name="attr_resistances" style="width: 2.9in"/>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="labelledBoxH" style="width: 4.5in">
+                  <div class="labelledBoxH" style="width: 4in">
                     <label data-i18n="immunities">Immunities</label>
                     <div class="inner">
-                      <input type="text" name="attr_immunities" style="width: 3.4in"/>
+                      <input type="text" name="attr_immunities" style="width: 2.9in"/>
                     </div>
                   </div>
                 </div>
@@ -6169,7 +6175,6 @@ function forceUpdate(attrs, cb) {
 const buttonlist = ["core","skills","specials-feats","equipment","magic","notes"];
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
-        console.log("TESTING")
         setAttrs({
             sheetTab: button
         });
@@ -6263,10 +6268,10 @@ onChangeParse(['dex_mod', 'init_misc'], values => {
 
 // AC
 
-onChangeParse(['ac_equipment', 'dex_mod', 'size', 'ac_misc', 'ac_temp'], values => {
+onChangeParse(['ac_equipment', 'dex_mod', 'size', 'ac_misc', 'ac_temp', 'ac_dex_max'], values => {
   setAttrs({
-    ac: 10 + values.ac_equipment + values.dex_mod + values.size + values.ac_misc + values.ac_temp,
-    ac_touch: 10 + values.dex_mod + values.size + values.ac_misc + values.ac_temp,
+    ac: 10 + values.ac_equipment + Math.min(values.dex_mod, values.ac_dex_max) + values.size + values.ac_misc + values.ac_temp,
+    ac_touch: 10 + Math.min(values.dex_mod, values.ac_dex_max) + values.size + values.ac_misc + values.ac_temp,
     ac_flatfoot: 10 + values.ac_equipment + values.size + values.ac_misc + values.ac_temp,
   });
 });

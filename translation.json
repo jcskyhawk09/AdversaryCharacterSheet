@@ -216,5 +216,6 @@
 	"result-tpl": "Result $[[0]]",
 	"notes-tpl": "Notes:",
 	"attack-notes-tpl": "Attack Notes:",
-	"gm": "GM"
+	"gm": "GM",
+	"ac-dex-max": "AC Dex Max"
 }
