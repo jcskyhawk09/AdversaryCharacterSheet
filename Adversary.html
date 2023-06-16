@@ -2490,15 +2490,15 @@ function addAllSkills() {
 function importSkills() {
   getAttrs(skills2Name, function(v) {
     const settings = {};  //create an object to store the new rows
-    for (i=0; i<skills.length; i++) {  // loop a number of times equal to the rows.      
-      if (v[skills[i].skill+"_ranks"] != 0 || v[skills[i].skill+"_misc"] != 0 || v[skills[i].skill+"_notes"] != "") {       
+    for (i=0; i<skills.length; i++) {  // loop a number of times equal to the rows.
+      if ((v[skills[i].skill+"_ranks"] != undefined || v[skills[i].skill+"_misc"] != undefined || v[skills[i].skill+"_notes"] != undefined)) {       
         const newrowid = generateRowID(); 
         settings["repeating_skills_" + newrowid + "_skill_name"] = skills[i].skill;
         settings["repeating_skills_" + newrowid + "_skill_ability"] = skills[i].ability;
         settings["repeating_skills_" + newrowid + "_skill_acp"] = skills[i].armorPenalty;
-        settings["repeating_skills_" + newrowid + "_skill_ranks"] = v[skills[i].skill+"_ranks"];
-        settings["repeating_skills_" + newrowid + "_skill_misc"] = v[skills[i].skill+"_misc"];
-        settings["repeating_skills_" + newrowid + "_skill_notes"] = v[skills[i].skill+"_notes"];
+        settings["repeating_skills_" + newrowid + "_skill_ranks"] = (v[skills[i].skill+"_ranks"] || 0);
+        settings["repeating_skills_" + newrowid + "_skill_misc"] = (v[skills[i].skill+"_misc"] || 0);
+        settings["repeating_skills_" + newrowid + "_skill_notes"] = (v[skills[i].skill+"_notes"] || "");
       }
     }
     setAttrs(settings);
