@@ -2618,7 +2618,7 @@ _.each(skills, skillTuple => {
 });
 
 
-onChange(['caster_ability'], () => {
+onChange(['caster_ability', 'str_mod', 'dex_mod', 'con_mod', 'int_mod', 'wis_mod', 'cha_mod'], () => {
   getAttrs(['caster_ability'], values => {
     var caster_ability = values.caster_ability;
     parseAttrs([caster_ability + '_mod'], values => {
