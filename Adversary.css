@@ -557,9 +557,9 @@
 }
 .charsheet .pfLogo {
   background-image: url("https://raw.githubusercontent.com/jcskyhawk09/AdversaryCharacterSheet/main/AdversaryAlpha3.png");
-  background-size: 100%;
+  background-size: 100% 100%;
   display: inline-block;
-  height: 1in;
+  height: 1.5in;
   width: 4in;
 }
 .charsheet .topStats {
@@ -656,4 +656,5 @@ body.sheet-darkmode .charsheet .pfLogo {
 .sheet-rolltemplate-darkmode table {
   background: var(--dark-surface1);
   border: solid 2px #000;
+  color: #ddd;
 }
